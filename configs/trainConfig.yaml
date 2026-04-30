@@ -1,0 +1,83 @@
+workFlows: [5]
+workModule:
+  task1: OperSeq
+  task2: created
+  task3: visu
+  task4: emhancing
+  task5: trains
+  task6: expla
+  task7: forecast
+  task8: basetrain
+dataName: psySandBox-Graph
+dataDir: data
+parmulDir: model/paraphrase-multilingual
+structDir: struct
+trainDataDir: trainData
+es: 0.01
+logs:
+  outDir: logs
+  backupCount: 5
+  normInfo: True
+  dataInfo: True
+  dataSplitInfo: True
+  modelInfo: True
+  testResult: True
+create:
+  dataName: sandBoxData2
+  nameDim: 10
+  textDim: 10
+visual:
+  graphId: 10339
+  tool: plotly
+emhance:
+  maxCombine: 3
+  randomSeed: None
+  dataName: sandBoxData
+  firstId: 20000
+  testData: testData
+model:
+  modelName: GCNModel
+  nodeDim: 24
+  hiddenDim: 64
+  edgeDim: 1
+  numRelations: 3
+  numClasses: 3
+  numLayers: 4
+  numHeads: 4
+  alp: 1.0
+  probably: 0.1
+train:
+  kfolds: 5
+  threshold: 0.98
+  randomState: None
+  epochs: 200
+  lr: 0.02
+  classWeights: False
+  batchSize: 32
+  deleteEdge: 2
+result:
+  outDir: model/SandBoxModel
+  expNum: None
+  accLoss: True
+  valROC: True
+  testROC: True
+  valConfus: True
+  testConfus: True
+  modelWeights: True
+  fullModel: True
+  trainConfig: True
+  trainHistory: True
+  optState: True
+  modelMetadata: True
+explainer:
+  expNum: 48
+  isLoop: True
+  baseWidth: 8
+  minWidth: 0.5
+  maxWidth: 10.0
+  resultDir: explain
+  graphId: [10037, 10038, 10419, 11404]
+  topEdges: 20
+  topFeat: 20
+  allFeat: False
+

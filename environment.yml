@@ -1,0 +1,46 @@
+name: python3810
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8.20
+  - pip
+  # 核心科学计算库
+  - numpy=1.24.3
+  - pandas=2.0.3
+  - matplotlib=3.7.2
+  - scikit-learn=1.3.2
+  - networkx>=3.0
+  - plotly>=5.24.0
+  # PyTorch 及相关（指定 CUDA 11.8）
+  - pytorch=2.4.1
+  - torchvision=0.19.1
+  - torchaudio=2.4.1
+  - pytorch-cuda=11.8
+  # 其他常用工具
+  - pyyaml=6.0.2
+  - requests>=2.32.0
+  - tqdm>=4.67.0
+  # pip 安装的部分（conda 中版本不全或需预编译）
+  - pip:
+      # torch-geometric 核心及扩展（指定与 PyTorch 2.4.1 + CUDA 11.8 匹配的版本）
+      - torch-geometric==2.6.1
+      - torch-scatter==2.1.2+pt24cu118
+      - torch-sparse==0.6.18+pt24cu118
+      - torch-cluster==1.6.3+pt24cu118
+      - torch-spline-conv==1.2.2+pt24cu118
+      - pyg-lib==0.4.0+pt24cu118
+      # 自然语言处理
+      - sentence-transformers==3.2.1
+      - transformers==4.46.3
+      - datasets==3.1.0
+      - tokenizers==0.20.3
+      # 其他依赖
+      - yacs==0.1.8
+      # 如果 conda 安装的版本不满足，可取消注释以下行强制使用 pip 版本
+      # - networkx
+      # - plotly
+      # - scikit-learn
+      # - matplotlib
